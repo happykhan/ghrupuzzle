@@ -1,0 +1,55 @@
+{
+    "samples": [
+        {
+            "public_name": "EuSCAPE_IT370",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT370.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_ES220",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_ES220.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_LV006",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_LV006.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_IL075",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL075.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_GR153",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_TR083",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR083.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_FR056",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_FR056.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_IT062",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT062.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_AT022",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_AT022.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RO052",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO052.fasta"
+        }
+    ],
+    "answer_sheet": {
+        "filename": "practice_typing_answer_sheet_hbrpoig8.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_answer_sheet_hbrpoig8.csv",
+        "species": [
+            "K. pneumoniae"
+        ]
+    },
+    "sample_sheet": {
+        "filename": "sample_sheet.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet.csv"
+    }
+}

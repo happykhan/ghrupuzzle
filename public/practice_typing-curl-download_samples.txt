@@ -1,0 +1,13 @@
+#!/bin/bash
+
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT370.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_ES220.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_LV006.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL075.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR083.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_FR056.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT062.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_AT022.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO052.fasta
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet.csv
