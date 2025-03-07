@@ -23,8 +23,10 @@ export default function Home() {
       <p className="mt-4 text-lg">
         Participants will have access to practice puzzles, allowing them to build confidence and refine their skills at their own pace.  
         Additionally, a scheduled <strong>testing drill exercise</strong> will be conducted, where participants must complete a set of  
-        puzzles within a defined timeframe under <strong>test conditions</strong>. This drill will simulate real-world time constraints  
+        puzzles within a defined timeframe. This drill will simulate real-world time constraints  
         and decision-making pressures, helping participants prepare for high-stakes bioinformatics tasks in research and outbreak response.
+      </p>
+      <p className="mt-4 text-lg">  
         Successful completion of the drill will earn participants a certificate of achievements and the bioinformatics seal of approval.
       </p>
     </div>

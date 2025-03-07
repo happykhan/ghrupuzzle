@@ -11,6 +11,12 @@ export default function TypingPage() {
   const [samplesheet, setSamplesheet] = useState<{ url: string }>({ url: '' });    
   const [loading, setLoading] = useState(true);
 
+  const [realSamples, setRealSamples] = useState<Sample[]>([]);
+  const [realSpeciesList, setRealSpeciesList] = useState([]);
+  const [realSamplesheet, setRealSamplesheet] = useState<{ url: string }>({ url: '' });   
+  const [releaseTime, setReleaseTime] = useState();
+  const [realLoading, setRealLoading] = useState(true);
+
 
   useEffect(() => {
     fetch('/practice_typing_file_details.json')
@@ -28,20 +34,59 @@ export default function TypingPage() {
         });
 }, []);
 
+useEffect(() => {
+  fetch('/typing_file_details.json')
+      .then(response => response.json())
+      .then(data => {
+          console.log('File details:', data);
+          setRealSamples(data.samples);
+          setRealSpeciesList(data.answer_sheet.species); 
+          setRealSamplesheet(data.sample_sheet);
+          setRealLoading(false);
+          setReleaseTime(data.release_time);
+      })
+      .catch(error => {
+          console.error('Error fetching the file details:', error);
+          setRealLoading(false);
+      });
+}, []);
+
   return (
     <div className="flex flex-col items-center max-w-[800px] mx-auto">
         <h1>
           Genotyping puzzle
         </h1>
+        <p>
+                    Welcome to this genome puzzle, a challenge designed to test your bioinformatics skills. This is an excellent 
+                    opportunity to demonstrate your expertise in genotyping.
+                </p>
         {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
             <div>
-                <p>
-                    Welcome to this genome puzzle, a challenge designed to test your bioinformatics skills. This is an excellent 
-                    opportunity to demonstrate your expertise in genotyping.
-                </p>
-                <h2>Challenge Overview (Practice)</h2>
+              <h1>Challenge Overview</h1>
+              {releaseTime ? (
+              new Date() > new Date(releaseTime) ? (
+                <div>
+                <p>The real samples are:</p>
+                </div>
+              ) : (
+                <div>
+                <p>The data will be available on {new Date(releaseTime).toLocaleString()}.</p>
+                </div>
+              )
+              ) : (
+              <div>
+                <p>The data is not available yet. Please try the practice exercise instead.</p>
+              </div>
+              )}
+            </div>
+            )}
+        {loading ? (
+                <div><p>The today&apos;s genome puzzle is loading...</p></div>
+            ) : (
+            <div>
+                <h1>Practice exercise</h1>
                 <p>
                     You are provided with {samples.length} genome samples belonging to the species <em>{speciesList.join(', ')}</em>. 
                     Your task is to:
