@@ -1,0 +1,96 @@
+{
+    "samples": [
+        {
+            "public_name": "EuSCAPE_LU018",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_LU018.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_DE075",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE075.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RS081",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS081.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_IL075",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL075.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_GR153",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_TR203",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR203.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_FR056",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_FR056.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_DE072",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE072.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_HU025",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_HU025.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_ES220",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_ES220.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_BE078",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_BE078.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_IL046",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL046.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_GR075",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR075.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RS010",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS010.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RS064",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS064.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_IT312",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT312.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RO052",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO052.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_RO094",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO094.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_TR083",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR083.fasta"
+        },
+        {
+            "public_name": "EuSCAPE_DE024",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE024.fasta"
+        }
+    ],
+    "answer_sheet": {
+        "filename": "real_typing_answer_sheet_hbrpoig8.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/real_typing_answer_sheet_hbrpoig8.csv",
+        "species": [
+            "K. pneumoniae"
+        ]
+    },
+    "sample_sheet": {
+        "filename": "sample_sheet.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/real_typing_sample_sheet_f775c4.csv"
+    },
+    "release_date": "2025-04-10 15:37:00"
+}

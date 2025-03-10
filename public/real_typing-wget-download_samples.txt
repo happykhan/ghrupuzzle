@@ -1,0 +1,23 @@
+#!/bin/bash
+
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_LU018.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE075.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS081.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL075.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR203.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_FR056.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE072.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_HU025.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_ES220.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_BE078.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL046.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR075.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS010.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RS064.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT312.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO052.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO094.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR083.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_DE024.fasta
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/real_typing_sample_sheet_f775c4.csv

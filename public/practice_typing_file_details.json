@@ -19,26 +19,6 @@
         {
             "public_name": "EuSCAPE_GR153",
             "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta"
-        },
-        {
-            "public_name": "EuSCAPE_TR083",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_TR083.fasta"
-        },
-        {
-            "public_name": "EuSCAPE_FR056",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_FR056.fasta"
-        },
-        {
-            "public_name": "EuSCAPE_IT062",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT062.fasta"
-        },
-        {
-            "public_name": "EuSCAPE_AT022",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_AT022.fasta"
-        },
-        {
-            "public_name": "EuSCAPE_RO052",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_RO052.fasta"
         }
     ],
     "answer_sheet": {
@@ -50,6 +30,7 @@
     },
     "sample_sheet": {
         "filename": "sample_sheet.csv",
-        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet.csv"
-    }
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet_5a06be.csv"
+    },
+    "release_date": "2025-03-10 15:37:00"
 }

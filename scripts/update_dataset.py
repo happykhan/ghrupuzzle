@@ -8,11 +8,20 @@ import logging
 import csv
 import random
 import string
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+import hashlib
 
 # Set up logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
+def md5(file_path):
+    hash_md5 = hashlib.md5()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
 
 def create_download_script(file_details):
     script_content = "#!/bin/bash\n\n"
@@ -87,7 +96,7 @@ def file_upload(s3, fastq, bucket_name, key, force):
             logging.info("Successfully uploaded %s", key)    
 
 
-def upload_fastq_to_r2(directory_path, dotenv, force, rapidpath, random_seed=42):
+def upload_fastq_to_r2(directory_path, dotenv, force, rapidpath, release_date, random_seed=42):
     # Load environment variables from .env file
     if not load_dotenv(dotenv):
         raise ValueError("Could not load environment variables from .env file.")
@@ -152,13 +161,14 @@ def upload_fastq_to_r2(directory_path, dotenv, force, rapidpath, random_seed=42)
         f"answer_sheet_{generate_random_string(random_seed=random_seed)}.csv"
     )
     # Read answer sheet and get out list of included species 
-    species_list = list(set(row['SPECIES'] for row in answer_sheet))    
+    species_list = list(set(row['SPECIES'] for row in answer_sheet))
     # Upload answer_sheet.csv with random filename
    # s3.upload_file(answer_sheet_path, bucket_name, random_filename)
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
     # upload sample_sheet.csv
    # s3.upload_file(sample_sheet_path, bucket_name, "sample_sheet.csv")
     file_details['sample_sheet'] = { 'filename': 'sample_sheet.csv', 'url': f'{public_url}/sample_sheet.csv' }
+    file_details['release_date'] = release_date
     # Write details to JSON file
     with open("public/file_details.json", "w", encoding="utf-8") as json_file:
         json.dump(file_details, json_file, indent=4)
@@ -171,7 +181,7 @@ def upload_fastq_to_r2(directory_path, dotenv, force, rapidpath, random_seed=42)
             key = os.path.basename(rapid_file_path)
             file_upload(s3, fastq, bucket_name, key, force)
             
-def upload_fasta_to_r2(dataset, directory_path, dotenv, force, random_seed=42):
+def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date, random_seed=42):
     # Load environment variables from .env file
     if not load_dotenv(dotenv):
         raise ValueError("Could not load environment variables from .env file.")
@@ -225,11 +235,17 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, random_seed=42):
     # Read answer sheet and get out list of included species 
     species_list = list(set(row['SPECIES'] for row in answer_sheet))    
     # Upload answer_sheet.csv with random filename
-   # s3.upload_file(answer_sheet_path, bucket_name, random_filename)
+    s3.upload_file(answer_sheet_path, bucket_name, random_filename)
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
     # upload sample_sheet.csv 
-    s3.upload_file(sample_sheet_path, bucket_name, f"{dataset}_sample_sheet.csv")
-    file_details['sample_sheet'] = { 'filename': 'sample_sheet.csv', 'url': f'{public_url}/{dataset}_sample_sheet.csv' }
+    # md5 the sample sheet
+
+    sample_sheet_md5 = md5(sample_sheet_path)[0:6]
+    logging.info("MD5 checksum of sample_sheet.csv: %s", sample_sheet_md5)
+    samplesheet_name = f"{dataset}_sample_sheet_{sample_sheet_md5}.csv"
+    s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name)
+    file_details['sample_sheet'] = { 'filename': 'sample_sheet.csv', 'url': f'{public_url}/{samplesheet_name}' }
+    file_details['release_date'] = release_date
     # Write details to JSON file
     with open(f"public/{dataset}_file_details.json", "w", encoding="utf-8") as json_file:
         json.dump(file_details, json_file, indent=4)
@@ -240,7 +256,11 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, random_seed=42):
 
 def main(args):
     # upload typing path 
-    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, random_seed=42)
+    now = datetime.now()
+    practice_release_date = now.strftime("%Y-%m-%d %H:%M:%S")
+    test_release_date = (now + relativedelta(months=1)).strftime("%Y-%m-%d %H:%M:%S")
+    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date, random_seed=42)
+    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force,  test_release_date,random_seed=42)
     
 
 
@@ -252,6 +272,12 @@ if __name__ == "__main__":
         help="The directory path to upload files from.",
         default="../genomepuzzle/ghru_output_dataset/kleborate_test",
     )
+    parser.add_argument(
+        "--realtypingpath",
+        type=str,
+        help="The directory path to upload files from.",
+        default="../genomepuzzle/ghru_output_dataset/real_kleborate_test",
+    )    
     parser.add_argument(
         "--outbreakpath",
         type=str,

@@ -10,10 +10,10 @@ export default function TypingPage() {
   const [speciesList, setSpeciesList] = useState([]);
   const [samplesheet, setSamplesheet] = useState<{ url: string }>({ url: '' });    
   const [loading, setLoading] = useState(true);
-  const [releaseTime, setReleaseTime] = useState<string | null>(null);
+
 
   useEffect(() => {
-    fetch('/real_typing_file_details.json')
+    fetch('/practice_typing_file_details.json')
         .then(response => response.json())
         .then(data => {
             console.log('File details:', data);
@@ -21,8 +21,6 @@ export default function TypingPage() {
             setSpeciesList(data.answer_sheet.species); 
             setSamplesheet(data.sample_sheet);
             setLoading(false);
-            setReleaseTime(data.release_date);
-
         })
         .catch(error => {
             console.error('Error fetching the file details:', error);
@@ -43,10 +41,7 @@ export default function TypingPage() {
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
             <div>
-              <h1>Challenge Overview</h1>
-              {releaseTime ? (
-              new Date() > new Date(releaseTime) ? (
-                <div>
+                <h1>Practice exercise</h1>
                 <p>
                     You are provided with {samples.length} genome samples belonging to the species <em>{speciesList.join(', ')}</em>. 
                     Your task is to:
@@ -89,27 +84,12 @@ export default function TypingPage() {
                     <li><a href='/practice_typing-wget-download_samples.txt'>Example script using wget</a></li>
                     <li><a href='/practice_typing-curl-download_samples.txt'>Example script using curl</a></li>
                 </ul>
-                <div className="mt-4"></div>
-                  <p>
-                    If you like, you can try the <a href="/typing/practice" className="text-blue-500 underline">Practice Exercise</a>
-                  </p>
-                </div>
-                
-              ) : (
-                <div>
-                <p>The data will be available on {new Date(releaseTime).toLocaleString()}.</p>
-                <a href="/typing/practice" className="text-blue-500 underline">Go to Practice Exercise</a>  
-                </div>
-              )
-              ) : (
-              <div>
-                <p>The data is not available yet. Please try the practice exercise instead.</p>
-                <a href="/typing/practice" className="text-blue-500 underline">Go to Practice Exercise</a>
-              </div>
-              )}
+
             </div>
-                  )} 
-              </div>
-          );
-      }
+            )}
+      </div>
+  );
+
+};
+
 
