@@ -259,8 +259,9 @@ def main(args):
     now = datetime.now()
     practice_release_date = now.strftime("%Y-%m-%d %H:%M:%S")
     test_release_date = (now + relativedelta(months=1)).strftime("%Y-%m-%d %H:%M:%S")
-    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date, random_seed=42)
-    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force,  test_release_date,random_seed=42)
+    random_seed = 42
+    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date, random_seed=random_seed)
+    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date,random_seed=random_seed * 2)
     
 
 
