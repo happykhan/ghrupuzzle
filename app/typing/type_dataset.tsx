@@ -28,10 +28,6 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
                 </div>
             
 
-            <p>
-                <strong>Kleborate</strong> is a tool that can be used to generate the required information from the genome assemblies. You can find more information and download it from <a href="https://github.com/klebgenomics/Kleborate" target="_blank" rel="noopener noreferrer"><strong>Kleborate GitHub repository</strong></a>.
-            </p>
-
             <h2>Sample Sheet</h2>
             <p>
                 To help you organize and submit your results, a sample sheet has been provided. You can download it by clicking the button below.
