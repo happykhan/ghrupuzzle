@@ -26,7 +26,7 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             <br/>
             <strong>Other Instructions</strong>
             <ul>
-            <li>If a sample is potentially contaminated with multiple species, report “CONTAMINATED” in the species column.</li>
+            <li>If a sample is potentially contaminated with multiple species, report &quot;CONTAMINATED&quot; in the tax_classification column.</li>
             <li>If confident in the assembly, report the determined species (e.g., <em>Klebsiella pneumoniae</em>).</li>
             </ul>
 
