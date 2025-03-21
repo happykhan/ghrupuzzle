@@ -56,7 +56,7 @@ export default function RootLayout({
         <footer className="footer">
           <div className="content has-text-centered">
             <p>
-              <strong>GHRUPuzzles</strong> by <a href="https://www.pathogensurveillance.net/">Nabil-Fareed Alikhan</a>.<br />
+              <strong>GHRUPuzzles</strong> by Nabil-Fareed Alikhan (<a href="https://www.pathogensurveillance.net/">CGPS</a>).<br />
               All content here is licensed under a Creative Commons Attribution 4.0 International License <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY NC 4.0</a>.<br />
               Reuse is encouraged with acknowledgement but only noncommercial uses of the work are permitted.<br />
               Credit must be given to creator.
