@@ -16,9 +16,9 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             </p>
             <ul>
                 <li>Use a <em>de novo</em> genome assembly tool to assemble the genome.</li>
-                <li>Assess the quality of the resulting genome assembly.</li>
+                <li>Quality control and taxonomically classify the sample.</li>
                 <li>Format a completed sample sheet.</li>
-                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>
+                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}.</li>
             </ul>
 
             These are the columns you need to fill in the sample sheet:
