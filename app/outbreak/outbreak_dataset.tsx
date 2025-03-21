@@ -32,7 +32,7 @@ const OutbreakExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             <p>
               Here is the metadata for the samples in the outbreak dataset. Please download it using the link.
             </p>
-            <button className="button is-link is-light"><a href={samplesheet.url}>Download the sample sheet here</a></button>
+            <button className="button is-link is-light"><a href={samplesheet.url} download target="_blank" rel="noopener noreferrer">Download the sample sheet here</a></button>
 
             <h2>Table of Samples</h2>
             <table className="table is-striped is-bordered">

@@ -36,7 +36,7 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
             <p>
                 To help you organize and submit your results, a sample sheet has been provided.  Please download it using the link.
             </p>
-            <button className="button is-link is-light"><a href={samplesheet.url}>Download the sample sheet here</a></button>
+            <button className="button is-link is-light"><a href={samplesheet.url} download target="_blank" rel="noopener noreferrer">Download the sample sheet here</a></button>
 
 
 

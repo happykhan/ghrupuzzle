@@ -34,7 +34,7 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             <p>
                 To help you organize and submit your results, a sample sheet has been provided. Please download it using the link.
             </p>
-            <button className="button is-link is-light"><a href={samplesheet.url}>Download the sample sheet here</a></button>
+            <button className="button is-link is-light"><a href={samplesheet.url} download target="_blank" rel="noopener noreferrer">Download the sample sheet here</a></button>
             <h2>Table of Samples</h2>
             <table className="table is-striped is-bordered">
                 <thead>
