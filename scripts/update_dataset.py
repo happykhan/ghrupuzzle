@@ -169,11 +169,11 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Read answer sheet and get out list of included species 
     species_list = list(set(row['SPECIES'] for row in answer_sheet))
     # Upload answer_sheet.csv with random filename
-    s3.upload_file(answer_sheet_path, bucket_name, random_filename)
+    s3.upload_file(answer_sheet_path, bucket_name, random_filename, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
     # upload sample_sheet.csv
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
-
+    s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
     # Write details to JSON file
@@ -237,12 +237,12 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Read answer sheet and get out list of included species 
     species_list = list(set(row['SPECIES'] for row in answer_sheet))    
     # Upload answer_sheet.csv with random filename
-    s3.upload_file(answer_sheet_path, bucket_name, random_filename)
+    s3.upload_file(answer_sheet_path, bucket_name, random_filename, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
     # upload sample_sheet.csv 
     # md5 the sample sheet
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
-    s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name)
+    s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
     fasta_create_download_script(dataset, file_details)

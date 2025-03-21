@@ -30,7 +30,7 @@ const OutbreakExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
 
             <h2>Sample Sheet</h2>
             <p>
-              Here is the metadata for the samples in the outbreak dataset. Please download it using the link.
+              Here is the metadata for the samples in the outbreak dataset. You can download the sample sheet by clicking the button below.
             </p>
             <button className="button is-link is-light"><a href={samplesheet.url} download target="_blank" rel="noopener noreferrer">Download the sample sheet here</a></button>
 
@@ -56,8 +56,8 @@ const OutbreakExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             <h2>Download Samples</h2>
             <p>You can download the samples in one go on the command line using something like curl or wget. Here are some example script to help:</p>
             <ul className="list-disc list-inside">
-                <li><button className="button is-link is-light is-small"><a href={`/${outbreak_type}-wget-download_samples.txt`}>Example script using wget</a></button></li>
-                <li><button className="button is-link is-light is-small"><a href={`/${outbreak_type}-curl-download_samples.txt`}>Example script using curl</a></button></li>
+                <li><button className="button is-link is-light is-small"><a href={`/${outbreak_type}-wget-download_samples.txt`} download target="_blank" rel="noopener noreferrer">Example script using wget</a></button></li>
+                <li><button className="button is-link is-light is-small"><a href={`/${outbreak_type}-curl-download_samples.txt`} download target="_blank" rel="noopener noreferrer">Example script using curl</a></button></li>
             </ul>
             </div>)};
 
