@@ -32,7 +32,8 @@ const AssemblyPage = () => {
 
 
     return (
-        <div className="flex flex-col items-center max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="content">
+            <section className="section is-medium">
             <h1><em>De novo</em> genome assembly puzzle</h1>
             {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
@@ -53,6 +54,7 @@ const AssemblyPage = () => {
             )}
             </div>
             )}
+            </section>
         </div>
     );
 };

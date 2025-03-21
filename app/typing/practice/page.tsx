@@ -30,7 +30,8 @@ export default function TypingPage() {
 }, []);
 
   return (
-    <div className="flex flex-col items-center max-w-[800px] mx-auto">
+    <div className="content">
+        <section className="section is-medium">     
         <h1>
           Genotyping puzzle
         </h1>
@@ -43,6 +44,7 @@ export default function TypingPage() {
             ) : (
                 <TypingExercise samples={samples} speciesList={speciesList} samplesheet={samplesheet} typing_type='practice_typing'/>
             )}
+            </section>
       </div>
   );
 

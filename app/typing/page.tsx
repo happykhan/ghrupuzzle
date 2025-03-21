@@ -32,7 +32,8 @@ export default function TypingPage() {
 }, []);
 
   return (
-    <div className="flex flex-col items-center max-w-[800px] mx-auto">
+    <div className="content">
+            <section className="section is-medium">
         <h1>
           Genotyping puzzle
         </h1>
@@ -40,7 +41,7 @@ export default function TypingPage() {
             Welcome to this genome puzzle, a challenge designed to test your bioinformatics skills. This is an excellent 
             opportunity to demonstrate your expertise in genotyping.
         </p>
-        <div className="my-4"></div>
+        <div className="container"></div>
         {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
@@ -64,6 +65,7 @@ export default function TypingPage() {
               )}
             </div>
                   )} 
+                  </section>
               </div>
           );
       }

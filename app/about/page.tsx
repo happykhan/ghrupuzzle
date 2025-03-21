@@ -2,8 +2,10 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
     return (
-        <div className="flex flex-col items-center max-w-[800px] mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-4">About Us</h1>
+
+        <div className="content">
+            <section className="section is-medium">
+            <h1 className="title">About Us</h1>
             <p className="text-lg">
                 Welcome to <strong>GHRUPuzzles</strong>! These datasets are designed as a skills assessment tool for members  
                 of the <strong>Global Health Research Unit (GHRU)</strong> on Genomic Surveillance of Antimicrobial Resistance.  
@@ -34,6 +36,7 @@ const AboutPage: React.FC = () => {
                     GHRU Pathogen Surveillance
                 </a>.
             </p>
+            </section>
         </div>
     );
 };

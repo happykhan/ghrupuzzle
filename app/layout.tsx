@@ -29,12 +29,7 @@ export default function RootLayout({
             <nav className="navbar" role="navigation" aria-label="main navigation">
             <Link className="navbar-item" href="/">Home</Link>
             <Link className="navbar-item" href="/about">About</Link>
-            <Link className="navbar-link"  href="/assembly">Genome assembly exercise</Link>
-            <div className="navbar-dropdown">
-              <Link className="navbar-item"  href="/assembly">Challenge</Link>
-              <Link className="navbar-item"  href="/assembly/practice">Practice</Link>
-            </div> 
-
+            <Link className="navbar-item"  href="/assembly">Genome assembly exercise</Link>
             <Link className="navbar-item"  href="/typing">Genotyping exercise</Link>
             <Link className="navbar-item"  href="/outbreak">Outbreak exercise</Link>
           </nav>

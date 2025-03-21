@@ -26,6 +26,10 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
                 <GenomeAssemblyQC/>
                 </div>
             <br/>
+            <strong>Important Instructions</strong>
+            <p>If a sample is potentially contaminated with multiple species, report “contaminated” in the species column.</p>
+            <p>If confident in the assembly, report the determined species (e.g., “Klebsiella pneumoniae”).</p>
+
 
             <h2>Sample Sheet</h2>
             <p>

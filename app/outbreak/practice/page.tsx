@@ -32,8 +32,10 @@ const OutbreakPage = () => {
 
 
     return (
-        <div className="flex flex-col items-center max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <h1>Outbreak puzzle</h1>
+        <div className="content">
+          <section className="section is-medium">
+
+            <h1 className='title'>Outbreak puzzle</h1>
             {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
@@ -52,6 +54,7 @@ const OutbreakPage = () => {
             )}
             </div>
             )}
+            </section>
         </div>
     );
 };

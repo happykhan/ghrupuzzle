@@ -35,13 +35,16 @@ const OutbreakPage = () => {
 
 
   return (
-    <div className="flex flex-col items-center max-w-[800px] mx-auto">
-        <h1>
-          Welcome
+    <div className="content">
+      <section className="section is-medium">
+
+        <h1 className='title'>
+          Outbreak puzzle
         </h1>
         <p>
-          GenomePuzzle is a comprehensive set of data designed for benchmarking, testing, and external quality assessment (EQA) in microbial bioinformatics. Our goal is to provide a reliable resource for researchers and professionals in the field.
-        </p>
+                    Welcome to this genome puzzle, a challenge designed to test your bioinformatics skills, and/or benchmark the 
+                    performance of your tools or pipelines for phylogenetics and outbreak detection. 
+                </p>
         {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
@@ -65,7 +68,7 @@ const OutbreakPage = () => {
               )}
             </div>
                   )} 
-
+      </section>
     </div>
   );
 }
