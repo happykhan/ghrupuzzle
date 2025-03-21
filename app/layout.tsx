@@ -54,12 +54,15 @@ export default function RootLayout({
         {children}
 
         <footer className="footer">
-  <div className="content has-text-centered">
-    <p>
-      <strong>GHRUPuzzles</strong> by <a href="https://www.pathogensurveillance.net/">Nabil-Fareed Alikhan</a>. All content here is licensed under a Creative Commons Attribution 4.0 International License CC BY-NC. Reuse is encouraged with acknowledgement but only noncommercial uses of the work are permitted. Credit must be given to creator. <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY NC 4.0</a>.
-    </p>
-  </div>
-</footer>        
+          <div className="content has-text-centered">
+            <p>
+              <strong>GHRUPuzzles</strong> by <a href="https://www.pathogensurveillance.net/">Nabil-Fareed Alikhan</a>.<br />
+              All content here is licensed under a Creative Commons Attribution 4.0 International License <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY NC 4.0</a>.<br />
+              Reuse is encouraged with acknowledgement but only noncommercial uses of the work are permitted.<br />
+              Credit must be given to creator.
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );

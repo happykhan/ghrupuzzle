@@ -36,6 +36,9 @@ const AboutPage: React.FC = () => {
                     GHRU Pathogen Surveillance
                 </a>.
             </p>
+            <p>
+              <strong>GHRUPuzzles</strong> by <a href="https://www.pathogensurveillance.net/">Nabil-Fareed Alikhan</a>. All content here is licensed under a Creative Commons Attribution 4.0 International License <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY NC 4.0</a>.               Reuse is encouraged with acknowledgement but only noncommercial uses of the work are permitted. Credit must be given to creator.
+            </p>            
             </section>
         </div>
     );
