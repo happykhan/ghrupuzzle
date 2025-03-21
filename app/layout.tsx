@@ -27,11 +27,29 @@ export default function RootLayout({
         className={`${alegreya.className} antialiased`}
       >
             <nav className="navbar" role="navigation" aria-label="main navigation">
-            <Link className="navbar-item" href="/">Home</Link>
-            <Link className="navbar-item" href="/about">About</Link>
-            <Link className="navbar-item"  href="/assembly">Genome assembly exercise</Link>
-            <Link className="navbar-item"  href="/typing">Genotyping exercise</Link>
-            <Link className="navbar-item"  href="/outbreak">Outbreak exercise</Link>
+            <div className="navbar-brand">
+            <Link className="navbar-item has-text-weight-bold" href="/">GHRUPUZZLES</Link>
+              <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>              
+            </div>
+            <div className="navbar-menu">
+              <div className="navbar-start">
+                
+              </div>
+
+              <div className="navbar-end">
+              <Link className="navbar-item" href="/">Home</Link>              
+              <Link className="navbar-item" href="/about">About</Link>
+              <Link className="navbar-item"  href="/assembly">Genome assembly exercise</Link>
+              <Link className="navbar-item"  href="/typing">Genotyping exercise</Link>
+              <Link className="navbar-item"  href="/outbreak">Outbreak exercise</Link>
+              </div>              
+             
+            </div>
           </nav>
         {children}
       </body>
