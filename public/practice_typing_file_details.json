@@ -1,36 +1,36 @@
 {
     "samples": [
         {
-            "public_name": "EuSCAPE_IT370",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IT370.fasta"
+            "public_name": "Sample_178db692",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_178db692.fasta"
         },
         {
-            "public_name": "EuSCAPE_ES220",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_ES220.fasta"
+            "public_name": "Sample_e236b6bd",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_e236b6bd.fasta"
         },
         {
-            "public_name": "EuSCAPE_LV006",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_LV006.fasta"
+            "public_name": "Sample_1cc0da37",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1cc0da37.fasta"
         },
         {
-            "public_name": "EuSCAPE_IL075",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_IL075.fasta"
+            "public_name": "Sample_eb789daf",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_eb789daf.fasta"
         },
         {
-            "public_name": "EuSCAPE_GR153",
-            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/EuSCAPE_GR153.fasta"
+            "public_name": "Sample_6d8e0e28",
+            "FASTA_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6d8e0e28.fasta"
         }
     ],
     "answer_sheet": {
-        "filename": "practice_typing_answer_sheet_hbrpoig8.csv",
-        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_answer_sheet_hbrpoig8.csv",
+        "filename": "practice_typing_answer_sheet_eb2f4f0079915d656baf.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_answer_sheet_eb2f4f0079915d656baf.csv",
         "species": [
             "K. pneumoniae"
         ]
     },
     "sample_sheet": {
-        "filename": "sample_sheet.csv",
-        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet_5a06be.csv"
+        "filename": "practice_typing_sample_sheet_eb2f4f0079.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_typing_sample_sheet_eb2f4f0079.csv"
     },
-    "release_date": "2025-03-10 15:41:48"
+    "release_date": "2025-03-21 08:47:55"
 }

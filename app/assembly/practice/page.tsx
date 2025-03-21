@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import AssemblyExercise from './assembly_dataset';
+import AssemblyExercise from '../assembly_dataset';
 
 const AssemblyPage = () => {
     interface Sample {
@@ -13,17 +13,15 @@ const AssemblyPage = () => {
     const [speciesList, setSpeciesList] = useState([]);
     const [samplesheet, setSamplesheet] = useState<{ url: string }>({ url: '' });    
     const [loading, setLoading] = useState(true);
-    const [releaseTime, setReleaseTime] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('/real_assembly_file_details.json')
+        fetch('/practice_assembly_file_details.json')
             .then(response => response.json())
             .then(data => {
                 console.log('File details:', data);
                 setSamples(data.samples);
                 setSpeciesList(data.answer_sheet.species); 
                 setSamplesheet(data.sample_sheet);
-                setReleaseTime(data.release_date);
                 setLoading(false);
             })
             .catch(error => {
@@ -46,32 +44,15 @@ const AssemblyPage = () => {
                     opportunity to demonstrate your expertise in genome reconstruction, quality control, and sequence analysis.
                 </p>
                 
+
                 <div className="my-4"></div>
         {loading ? (
                 <div><p>The today&apos;s genome puzzle is loading...</p></div>
             ) : (
-            <div>
-
-              {releaseTime ? (
-              new Date() > new Date(releaseTime) ? (
-                <AssemblyExercise samples={samples} speciesList={speciesList} samplesheet={samplesheet} assembly_type='real_assembly'/>
-                
-              ) : (
-                <div>
-                <p>The data will be available on {new Date(releaseTime).toLocaleString()}.</p>
-                <a href="/assembly/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a>  
-                </div>
-              )
-              ) : (
-              <div>
-                <p>The data is not available yet. Please try the practice exercise instead.</p>
-                <a href="/assembly/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a>
-              </div>
-              )}
+                <AssemblyExercise samples={samples} speciesList={speciesList} samplesheet={samplesheet} assembly_type='practice_assembly'/>
+            )}
             </div>
-                  )} 
-              </div>
-            )}            
+            )}
         </div>
     );
 };

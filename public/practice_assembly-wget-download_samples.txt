@@ -1,0 +1,13 @@
+#!/bin/bash
+
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_178db692semb_R1.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_178db692semb_R2.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_e236b6bdsemb_R1.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_e236b6bdsemb_R2.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1cc0da37semb_R1.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1cc0da37semb_R2.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_eb789dafsemb_R1.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_eb789dafsemb_R2.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6d8e0e28ntam_R1.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6d8e0e28ntam_R2.fastq.gz
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_assembly_sample_sheet_858efa66af.csv

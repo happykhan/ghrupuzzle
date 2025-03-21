@@ -5,7 +5,7 @@ const AboutPage: React.FC = () => {
         <div className="flex flex-col items-center max-w-[800px] mx-auto p-6">
             <h1 className="text-2xl font-bold mb-4">About Us</h1>
             <p className="text-lg">
-                Welcome to <strong>GHRUPuzzle</strong>! These datasets are designed as a skills assessment tool for members  
+                Welcome to <strong>GHRUPuzzles</strong>! These datasets are designed as a skills assessment tool for members  
                 of the <strong>Global Health Research Unit (GHRU)</strong> on Genomic Surveillance of Antimicrobial Resistance.  
                 However, anyone with an interest in bioinformatics and pathogen genomics is welcome to try these exercises.
             </p>

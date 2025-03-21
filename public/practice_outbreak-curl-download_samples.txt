@@ -1,0 +1,37 @@
+#!/bin/bash
+
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_aec9e3e812_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_aec9e3e812_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_baa345ee12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_baa345ee12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_9891472f12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_9891472f12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_56d5e08512_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_56d5e08512_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_65ecf0ad12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_65ecf0ad12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b33fd7ff12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b33fd7ff12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_0d33d1d912_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_0d33d1d912_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_16fa005c12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_16fa005c12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_397af7f512_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_397af7f512_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d130ab9112_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d130ab9112_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_bf2f666c12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_bf2f666c12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d90bc1d412_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d90bc1d412_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_97abb98912_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_97abb98912_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_401e8aff12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_401e8aff12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_522e15ff12_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_522e15ff12_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1a2d56c712_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1a2d56c712_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_367fe1b312_R1.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_367fe1b312_R2.fastq.gz
+curl -O https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_outbreak_sample_sheet_e18c8a1ee8.csv

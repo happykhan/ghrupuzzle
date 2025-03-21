@@ -5,7 +5,7 @@ export default function Home() {
     <div className="flex flex-col items-center max-w-[800px] mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Welcome to GHRUPuzzles</h1>
       <p className="text-lg">
-      <strong>GHRUPuzzle</strong> are controlled datasets designed to challenge and enhance the bioinformatics skills of GHRU members.  
+      <strong>GHRUPuzzles</strong> are controlled datasets designed to challenge and enhance the bioinformatics skills of GHRU members.  
         Through a series of structured exercises (puzzles), participants can test and refine their expertise in key bioinformatics  
         workflows, including genome assembly, genotyping, and phylogenetic analysis for outbreak investigations.
       </p>
