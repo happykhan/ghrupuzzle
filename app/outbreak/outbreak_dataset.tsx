@@ -17,10 +17,10 @@ const OutbreakExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             </p>
             <ul className="list-disc list-inside">
                 <li>Use read mapping and variant calling tools.</li>
-                <li>Create a phylogenetic tree, as a newick file</li>
+                <li>Create a phylogenetic tree, as a newick file.</li>
                 <li>Create a <a href="https://microreact.org/" target="_blank" rel="noopener noreferrer">Microreact</a>, using the metadata in the sample sheet.</li>
                 <li>Detemine which samples are in a potential outbreak cluster.</li>
-                <li>Send your .microreact file, and csv of your results to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>
+                <li>Send your .microreact file, and csv of your results to {'nabil.alikhan'}{'@'}{'cgps.group'}.</li>
             </ul>
             <p>
                 These are the columns you need to include in the sample sheet, most of which are already provided in the samplesheet:

@@ -14,10 +14,10 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
                 Your task is to:
             </p>
             <ul className="list-disc list-inside">
-                <li>Genotype these assemblies using the appropriate tool</li>
-                <li>Extract the required information from the output</li>
+                <li>Genotype these assemblies using the appropriate tool.</li>
+                <li>Extract the required information from the output.</li>
                 <li>Format a completed sample sheet.</li>
-                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>                
+                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}.</li>                
             </ul>
             <br/>
             <p>
