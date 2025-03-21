@@ -71,7 +71,7 @@ function GenomeAssemblyQC() {
     const columns = [
       { name: "Column Name", description: "Description" },
       { name: "sample_name", description: "Name or identifier of the genome sample being analyzed." },
-      { name: "species", description: "The predicted or assigned species of the genome." },
+      { name: "species", description: "The expected species of the genome. This may not be true." },
       { name: "r1", description: "Path to the forward read file (R1) used for assembly." },
       { name: "r2", description: "Path to the reverse read file (R2) used for assembly." },
       { name: "qc", description: "Overall quality control status (either PASSED or FAILED)." },

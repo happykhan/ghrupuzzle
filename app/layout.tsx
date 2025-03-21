@@ -19,32 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"/>      
       </head>
       <body
         className={`${alegreya.className} antialiased`}
       >
-        <nav>
-          <ul className="flex space-x-4">
-            <li className="font-bold mr-6">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="font-bold mr-6">
-              <Link href="/about">About</Link>
-            </li>
-            <li className="font-bold mr-6">
-              <Link href="/assembly">Genome assembly exercise</Link>
-            </li>             
-            <li className="font-bold mr-6">
-              <Link href="/typing">Genotyping exercise</Link>
-            </li>       
-            <li className="font-bold mr-6">
-              <Link href="/outbreak">Outbreak exercise</Link>
-            </li>                                   
-          </ul>        
-        </nav>
+            <nav className="navbar" role="navigation" aria-label="main navigation">
+            <Link className="navbar-item" href="/">Home</Link>
+            <Link className="navbar-item" href="/about">About</Link>
+            <Link className="navbar-link"  href="/assembly">Genome assembly exercise</Link>
+            <div className="navbar-dropdown">
+              <Link className="navbar-item"  href="/assembly">Challenge</Link>
+              <Link className="navbar-item"  href="/assembly/practice">Practice</Link>
+            </div> 
+
+            <Link className="navbar-item"  href="/typing">Genotyping exercise</Link>
+            <Link className="navbar-item"  href="/outbreak">Outbreak exercise</Link>
+          </nav>
         {children}
       </body>
     </html>
