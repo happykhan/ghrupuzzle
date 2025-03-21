@@ -14,7 +14,7 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
                 You are provided with {samples.length} genome samples belonging to the species <em>{speciesList.join(', ')}</em>. 
                 Your task is to:
             </p>
-            <ul className="list-disc list-inside">
+            <ul>
                 <li>Genotype these assemblies using the appropriate tool</li>
                 <li>Extract the required information from the output</li>
                 <li>Format a completed sample sheet.</li>
@@ -22,49 +22,45 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
             </ul>
 
             These are the columns you need to fill in the sample sheet:
-                <div className="my-4">
                 <GenomeAssemblyQC/>
-                </div>
             <br/>
-            <strong>Important Instructions</strong>
-            <p>If a sample is potentially contaminated with multiple species, report “contaminated” in the species column.</p>
-            <p>If confident in the assembly, report the determined species (e.g., “Klebsiella pneumoniae”).</p>
-
+            <strong>Other Instructions</strong>
+            <ul>
+            <li>If a sample is potentially contaminated with multiple species, report “contaminated” in the species column.</li>
+            <li>If confident in the assembly, report the determined species (e.g., “Klebsiella pneumoniae”).</li>
+            </ul>
 
             <h2>Sample Sheet</h2>
             <p>
-                To help you organize and submit your results, a sample sheet has been provided.
+                To help you organize and submit your results, a sample sheet has been provided. Please download it using the link.
             </p>
-            <p>
-                Please download it using the link: <a href={samplesheet.url}>Download the sample sheet here</a>.
-            </p>
-
+            <button className="button is-link is-light"><a href={samplesheet.url}>Download the sample sheet here</a></button>
             <h2>Table of Samples</h2>
-            <table className="w-full">
+            <table className="table is-striped is-bordered">
                 <thead>
-                    <tr className="border-b border-gray-200">
-                        <th className="text-left px-4 py-2">Sample Name</th>
-                        <th className="text-left px-4 py-2">FASTQ R1 URL</th>
-                        <th className="text-left px-4 py-2">FASTQ R2 URL</th>
+                    <tr>
+                        <th>Sample Name</th>
+                        <th>FASTQ R1 URL</th>
+                        <th>FASTQ R2 URL</th>
                     </tr>
                 </thead>
                 <tbody>
                     {samples.map((sample, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                            <td className="px-4 py-2">{sample.public_name}</td>
-                            <td className="px-4 py-2"><a href={sample.R1_URL} target="_blank" rel="noopener noreferrer">{sample.R1_URL.split('/').pop()}</a></td>
-                            <td className="px-4 py-2"><a href={sample.R2_URL} target="_blank" rel="noopener noreferrer">{sample.R2_URL.split('/').pop()}</a></td>
+                        <tr key={index}>
+                            <td>{sample.public_name}</td>
+                            <td><a href={sample.R1_URL} target="_blank" rel="noopener noreferrer">{sample.R1_URL.split('/').pop()}</a></td>
+                            <td><a href={sample.R2_URL} target="_blank" rel="noopener noreferrer">{sample.R2_URL.split('/').pop()}</a></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
 
             <h2>Download Samples</h2>
-            <p>You can download the samples in one go on the command line using something like curl or wget. Here are some example script to help:</p>
-            <ul className="list-disc list-inside">
-                <li><a href={`/${assembly_type}-wget-download_samples.txt`}>Example script using wget</a></li>
-                <li><a href={`/${assembly_type}-curl-download_samples.txt`}>Example script using curl</a></li>
-            </ul>
+            <p>You can download the samples in one go on the command line using something like curl or wget. Here are some example scripts to help:</p>
+            <ul>
+                <li><button className="button is-link is-light is-small"><a href={`/${assembly_type}-wget-download_samples.txt`}>Example script using wget</a></button></li>
+                <li><button className="button is-link is-light is-small"><a href={`/${assembly_type}-curl-download_samples.txt`}>Example script using curl</a></button></li>
+              </ul>
         </div>
     );
 };
@@ -85,19 +81,19 @@ function GenomeAssemblyQC() {
     ];
   
     return (
-      <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300 shadow-lg">
-          <thead className="bg-gray-200">
+      <div>
+        <table className="table is-striped is-bordered">
+            <thead>
             <tr>
-              <th className="px-4 py-2 border">Column Name</th>
-              <th className="px-4 py-2 border">Description</th>
+              <th>Column Name</th>
+              <th>Description</th>
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             {columns.slice(1).map((col, index) => (
-              <tr key={index} className="border">
-                <td className="px-4 py-2 border font-semibold">{col.name}</td>
-                <td className="px-4 py-2 border">{col.description}</td>
+              <tr key={index}>
+              <td>{col.name}</td>
+              <td>{col.description}</td>
               </tr>
             ))}
           </tbody>

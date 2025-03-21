@@ -53,14 +53,14 @@ export default function TypingPage() {
                 
               ) : (
                 <div>
-                <p>The data will be available on {new Date(releaseTime).toLocaleString()}.</p>
-                <a href="/typing/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a>  
+                <p>The challenge data is not released yet. <strong>The data will be available on {new Date(releaseTime).toLocaleString()}</strong>. Please try the practice exercise instead.</p>
+                <button className='button is-light is-link'><a href="/typing/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a></button>  
                 </div>
               )
               ) : (
               <div>
                 <p>The data is not available yet. Please try the practice exercise instead.</p>
-                <a href="/typing/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a>
+                <button className='button is-light is-link'><a href="/typing/practice" className="text-blue-500 underline text-lg">Go to Practice Exercise</a></button>
               </div>
               )}
             </div>

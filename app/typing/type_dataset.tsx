@@ -34,23 +34,23 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
 
             <h2>Sample Sheet</h2>
             <p>
-                To help you organize and submit your results, a sample sheet has been provided.
+                To help you organize and submit your results, a sample sheet has been provided.  Please download it using the link.
             </p>
-            <p>
-                Please download it using the link: <a href={samplesheet.url}>Download the sample sheet here</a>.
-            </p>
+            <button className="button is-link is-light"><a href={samplesheet.url}>Download the sample sheet here</a></button>
+
+
 
             <h2>Table of Samples</h2>
-            <table className="w-full">
+            <table className="table is-striped is-bordered">
                 <thead>
-                    <tr className="border-b border-gray-200">
-                        <th className="text-left px-4 py-2">Sample Name</th>
-                        <th className="text-left px-4 py-2">FASTA URL</th>
+                    <tr>
+                        <th>Sample Name</th>
+                        <th>FASTA URL</th>
                     </tr>
                 </thead>
                 <tbody>
                     {samples.map((sample, index) => (
-                        <tr key={index} className="border-b border-gray-200">
+                        <tr key={index}>
                             <td className="px-4 py-2">{sample.public_name}</td>
                             <td className="px-4 py-2"><a href={sample.FASTA_URL} target="_blank" rel="noopener noreferrer">{sample.FASTA_URL.split('/').pop()}</a></td>
                         </tr>
@@ -61,8 +61,8 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
             <h2>Download Samples</h2>
             <p>You can download the samples in one go on the command line using something like curl or wget. Here are some example script to help:</p>
             <ul className="list-disc list-inside">
-                <li><a href={`/${typing_type}-wget-download_samples.txt`}>Example script using wget</a></li>
-                <li><a href={`/${typing_type}-curl-download_samples.txt`}>Example script using curl</a></li>
+                <li><button className="button is-link is-light is-small"><a href={`/${typing_type}-wget-download_samples.txt`}>Example script using wget</a></button></li>
+                <li><button className="button is-link is-light is-small"><a href={`/${typing_type}-curl-download_samples.txt`}>Example script using curl</a></button></li>
             </ul>
         </div>
     );
@@ -85,8 +85,8 @@ function KleborateTable() {
     ];
   
     return (
-      <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300 shadow-lg">
+      <div>
+        <table className="table is-striped is-bordered">
           <thead className="bg-gray-200">
             <tr>
               <th className="px-4 py-2 border">Column Name</th>
