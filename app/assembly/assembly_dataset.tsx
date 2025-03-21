@@ -15,8 +15,8 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
                 Your task is to:
             </p>
             <ul>
-                <li>Genotype these assemblies using the appropriate tool</li>
-                <li>Extract the required information from the output</li>
+                <li>Use a de novo genome assembly tool to assemble the genome.</li>
+                <li>Assess the quality of the resuling genome assembly.</li>
                 <li>Format a completed sample sheet.</li>
                 <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>
             </ul>
