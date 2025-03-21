@@ -78,7 +78,6 @@ function GenomeAssemblyQC() {
       { name: "qc", description: "Overall quality control status (either PASSED or FAILED)." },
       { name: "error", description: "Description of any errors detected during QC (e.g., contamination, low coverage)." },
       { name: "notes", description: "Additional comments or observations about the genome assembly." },
-      { name: "fasta", description: "Path to the assembled FASTA file for this sample." },
     ];
   
     return (

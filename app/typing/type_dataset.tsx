@@ -82,7 +82,6 @@ function KleborateTable() {
       { name: "o_type", description: "General O-antigen serotype inferred from the o_locus." },
       { name: "bla_carb", description: "List of detected carbapenemase genes (e.g., blaKPC, blaNDM, blaOXA-48), which are critical for antibiotic resistance." },
       { name: "species", description: "The species of the genome, as determined by YOU." },
-      { name: "fasta", description: "Path or name of the input FASTA file used for analysis." },
     ];
   
     return (
