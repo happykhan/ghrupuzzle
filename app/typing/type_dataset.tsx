@@ -81,6 +81,7 @@ function KleborateTable() {
       { name: "o_locus", description: "O-antigen (O) locus type, which determines the lipopolysaccharide (LPS) serotype (e.g., O1, O2, O3, etc.)." },
       { name: "o_type", description: "General O-antigen serotype inferred from the o_locus." },
       { name: "bla_carb", description: "List of detected carbapenemase genes (e.g., blaKPC, blaNDM, blaOXA-48), which are critical for antibiotic resistance." },
+      { name: "species", description: "The species of the genome, as determined by YOU." },
       { name: "fasta", description: "Path or name of the input FASTA file used for analysis." },
     ];
   
