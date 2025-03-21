@@ -96,7 +96,7 @@ def file_upload(s3, fastq, bucket_name, key, force):
             logging.info("Successfully uploaded %s", key)    
 
 
-def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date, random_seed=42):
+def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Load environment variables from .env file
     if not load_dotenv(dotenv):
         raise ValueError("Could not load environment variables from .env file.")
@@ -173,7 +173,7 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date, ran
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
     # upload sample_sheet.csv
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
-    s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name)
+
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
     # Write details to JSON file
@@ -182,7 +182,7 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date, ran
 
     create_download_script(dataset, file_details)
             
-def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date, random_seed=42):
+def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Load environment variables from .env file
     if not load_dotenv(dotenv):
         raise ValueError("Could not load environment variables from .env file.")
@@ -257,13 +257,12 @@ def main(args):
     now = datetime.now()
     practice_release_date = now.strftime("%Y-%m-%d %H:%M:%S")
     test_release_date = (now + relativedelta(months=1)).strftime("%Y-%m-%d %H:%M:%S")
-    random_seed = 42
-    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date, random_seed=random_seed)
-    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date,random_seed=random_seed * 2)
-    upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, args.force, practice_release_date, random_seed=random_seed)
-    upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, args.force, test_release_date, random_seed=random_seed * 2)
-    upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date, random_seed=random_seed)
-    upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date, random_seed=random_seed * 2)
+    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
+    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
+    upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, args.force, practice_release_date)
+    upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, args.force, test_release_date)
+    upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
+    upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
 
 
 if __name__ == "__main__":
@@ -307,7 +306,6 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dotenv", type=str, help="dotenv file", default=".r3_config.env"
     )
-    parser.add_argument("--random_seed", type=int, help="random seed", default=42)
     parser.add_argument("--verbose", action="store_true", help="verbose logging")
     parser.add_argument("--force", action="store_true", help="overwrite remote files")
     args = parser.parse_args()

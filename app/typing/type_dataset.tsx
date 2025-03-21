@@ -16,7 +16,8 @@ const TypingExercise: React.FC<{ samples: Sample[], speciesList: string[], sampl
             <ul className="list-disc list-inside">
                 <li>Genotype these assemblies using the appropriate tool</li>
                 <li>Extract the required information from the output</li>
-                <li>Format and submit a completed sample sheet.</li>
+                <li>Format a completed sample sheet.</li>
+                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>                
             </ul>
             <br/>
             <p>

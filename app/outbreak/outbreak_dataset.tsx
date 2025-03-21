@@ -6,34 +6,36 @@ interface Sample {
   R2_URL: string;
 }
 
-const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], samplesheet: { url: string }, assembly_type: string}> = ({ samples, speciesList, samplesheet, assembly_type }) => {
+
+const OutbreakExercise: React.FC<{ samples: Sample[], speciesList: string[], samplesheet: { url: string }, outbreak_type: string}> = ({ samples, speciesList, samplesheet, outbreak_type }) => {
     return (
         <div>
-            <h1>{assembly_type === 'real_assembly' ? 'Challenge exercise' : 'Practice exercise'}</h1>
+            <h1>{outbreak_type === 'real_outbreak' ? 'Challenge exercise' : 'Practice exercise'}</h1>
             <p>
                 You are provided with {samples.length} genome samples belonging to the species <em>{speciesList.join(', ')}</em>. 
                 Your task is to:
             </p>
             <ul className="list-disc list-inside">
-                <li>Genotype these assemblies using the appropriate tool</li>
-                <li>Extract the required information from the output</li>
-                <li>Format a completed sample sheet.</li>
-                <li>Send your completed sample sheet (csv) to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>
+                <li>Use read mapping and variant calling tools.</li>
+                <li>Create a phylogenetic tree, as a newick file</li>
+                <li>Create a <a href="https://microreact.org/" target="_blank" rel="noopener noreferrer">Microreact</a>, using the metadata in the sample sheet.</li>
+                <li>Detemine which samples are in a potential outbreak cluster.</li>
+                <li>Send your .microreact file, and csv of your results to {'nabil.alikhan'}{'@'}{'cgps.group'}</li>
             </ul>
-
-            These are the columns you need to fill in the sample sheet:
-                <div className="my-4">
-                <GenomeAssemblyQC/>
-                </div>
-            <br/>
+            <p>
+                These are the columns you need to include in the sample sheet, most of which are already provided in the samplesheet:
+            </p>
+            <div className="my-4"></div>
+            <OutbreakTable/>
 
             <h2>Sample Sheet</h2>
             <p>
-                To help you organize and submit your results, a sample sheet has been provided.
+              Here is the metadata for the samples in the outbreak dataset.
             </p>
             <p>
                 Please download it using the link: <a href={samplesheet.url}>Download the sample sheet here</a>.
             </p>
+
 
             <h2>Table of Samples</h2>
             <table className="w-full">
@@ -54,31 +56,32 @@ const AssemblyExercise: React.FC<{ samples: Sample[], speciesList: string[], sam
                     ))}
                 </tbody>
             </table>
-
             <h2>Download Samples</h2>
             <p>You can download the samples in one go on the command line using something like curl or wget. Here are some example script to help:</p>
             <ul className="list-disc list-inside">
-                <li><a href={`/${assembly_type}-wget-download_samples.txt`}>Example script using wget</a></li>
-                <li><a href={`/${assembly_type}-curl-download_samples.txt`}>Example script using curl</a></li>
+                <li><a href={`/${outbreak_type}-wget-download_samples.txt`}>Example script using wget</a></li>
+                <li><a href={`/${outbreak_type}-curl-download_samples.txt`}>Example script using curl</a></li>
             </ul>
-        </div>
-    );
-};
+            </div>)};
 
-export default AssemblyExercise;
 
-function GenomeAssemblyQC() {
-    const columns = [
-      { name: "Column Name", description: "Description" },
-      { name: "sample_name", description: "Name or identifier of the genome sample being analyzed." },
-      { name: "species", description: "The predicted or assigned species of the genome." },
-      { name: "r1", description: "Path to the forward read file (R1) used for assembly." },
-      { name: "r2", description: "Path to the reverse read file (R2) used for assembly." },
-      { name: "qc", description: "Overall quality control status (either PASSED or FAILED)." },
-      { name: "error", description: "Description of any errors detected during QC (e.g., contamination, low coverage)." },
-      { name: "notes", description: "Additional comments or observations about the genome assembly." },
-      { name: "fasta", description: "Path to the assembled FASTA file for this sample." },
-    ];
+export default OutbreakExercise;
+
+
+
+function OutbreakTable() {
+  const columns = [
+    { name: "Column Name", description: "Description" },
+    { name: "Sample", description: "Unique identifier or name for the sample being analyzed." },
+    { name: "Cluster", description: "Grouping of related samples based on genetic similarity or epidemiological links. YOUR TASK." },
+    { name: "Host", description: "The source organism or host from which the sample was collected (e.g., human, animal, environment)." },
+    { name: "Location", description: "Geographic location where the sample was collected." },
+    { name: "Collection Date", description: "The date on which the sample was obtained." },
+    { name: "Phenotype", description: "Observable characteristics, including antimicrobial resistance (AMR) profile or other traits." },
+    { name: "R1", description: "Path to the forward read file (R1) used for sequencing." },
+    { name: "R2", description: "Path to the reverse read file (R2) used for sequencing." },
+    { name: "Species", description: "The predicted or assigned species of the sample based on sequencing data." },
+  ];
   
     return (
       <div className="overflow-x-auto">
