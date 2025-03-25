@@ -259,8 +259,8 @@ def main(args):
     test_release_date = (now + relativedelta(months=1)).strftime("%Y-%m-%d %H:%M:%S")
     upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
     upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
-    upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, args.force, practice_release_date)
-    upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, args.force, test_release_date)
+    upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
+    upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)
     upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
     upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
 
@@ -307,6 +307,6 @@ if __name__ == "__main__":
         "--dotenv", type=str, help="dotenv file", default=".r3_config.env"
     )
     parser.add_argument("--verbose", action="store_true", help="verbose logging")
-    parser.add_argument("--force", action="store_true", help="overwrite remote files")
+    parser.add_argument("--force", action="store_true", help="overwrite remote files", default=False)
     args = parser.parse_args()
     main(args)

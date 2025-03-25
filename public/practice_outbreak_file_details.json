@@ -1,84 +1,84 @@
 {
     "samples": [
         {
-            "public_name": "Sample_aec9e3e812",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_aec9e3e812_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_aec9e3e812_R2.fastq.gz"
+            "public_name": "Sample_d8ea03ef12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d8ea03ef12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d8ea03ef12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_baa345ee12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_baa345ee12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_baa345ee12_R2.fastq.gz"
+            "public_name": "Sample_3e5226fa12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3e5226fa12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3e5226fa12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_9891472f12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_9891472f12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_9891472f12_R2.fastq.gz"
+            "public_name": "Sample_b6c614a412",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b6c614a412_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b6c614a412_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_56d5e08512",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_56d5e08512_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_56d5e08512_R2.fastq.gz"
+            "public_name": "Sample_e7e557ce12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_e7e557ce12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_e7e557ce12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_65ecf0ad12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_65ecf0ad12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_65ecf0ad12_R2.fastq.gz"
+            "public_name": "Sample_8bd87a3612",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_8bd87a3612_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_8bd87a3612_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_b33fd7ff12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b33fd7ff12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b33fd7ff12_R2.fastq.gz"
+            "public_name": "Sample_a81fc0de12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_a81fc0de12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_a81fc0de12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_0d33d1d912",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_0d33d1d912_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_0d33d1d912_R2.fastq.gz"
+            "public_name": "Sample_3f3fffd112",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3f3fffd112_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3f3fffd112_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_16fa005c12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_16fa005c12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_16fa005c12_R2.fastq.gz"
+            "public_name": "Sample_5686f52a12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_5686f52a12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_5686f52a12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_397af7f512",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_397af7f512_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_397af7f512_R2.fastq.gz"
+            "public_name": "Sample_6bb6df4612",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6bb6df4612_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6bb6df4612_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_d130ab9112",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d130ab9112_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d130ab9112_R2.fastq.gz"
+            "public_name": "Sample_63b0674712",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_63b0674712_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_63b0674712_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_bf2f666c12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_bf2f666c12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_bf2f666c12_R2.fastq.gz"
+            "public_name": "Sample_06b1665512",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_06b1665512_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_06b1665512_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_d90bc1d412",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d90bc1d412_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_d90bc1d412_R2.fastq.gz"
+            "public_name": "Sample_42591fbc12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_42591fbc12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_42591fbc12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_97abb98912",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_97abb98912_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_97abb98912_R2.fastq.gz"
+            "public_name": "Sample_dcb3f54f12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_dcb3f54f12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_dcb3f54f12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_401e8aff12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_401e8aff12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_401e8aff12_R2.fastq.gz"
+            "public_name": "Sample_43fb38ef12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_43fb38ef12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_43fb38ef12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_522e15ff12",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_522e15ff12_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_522e15ff12_R2.fastq.gz"
+            "public_name": "Sample_b4d363fb12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b4d363fb12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_b4d363fb12_R2.fastq.gz"
         },
         {
-            "public_name": "Sample_1a2d56c712",
-            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1a2d56c712_R1.fastq.gz",
-            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_1a2d56c712_R2.fastq.gz"
+            "public_name": "Sample_7eb9401d12",
+            "R1_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_7eb9401d12_R1.fastq.gz",
+            "R2_URL": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_7eb9401d12_R2.fastq.gz"
         },
         {
             "public_name": "Sample_367fe1b312",
@@ -87,15 +87,15 @@
         }
     ],
     "answer_sheet": {
-        "filename": "practice_outbreak_answer_sheet_e18c8a1ee8ffaffeea71.csv",
-        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_outbreak_answer_sheet_e18c8a1ee8ffaffeea71.csv",
+        "filename": "practice_outbreak_answer_sheet_eabeb18e767d7b93de4e.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_outbreak_answer_sheet_eabeb18e767d7b93de4e.csv",
         "species": [
             "Klebsiella pneumoniae"
         ]
     },
     "sample_sheet": {
-        "filename": "practice_outbreak_sample_sheet_e18c8a1ee8.csv",
-        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_outbreak_sample_sheet_e18c8a1ee8.csv"
+        "filename": "practice_outbreak_sample_sheet_eabeb18e76.csv",
+        "url": "https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/practice_outbreak_sample_sheet_eabeb18e76.csv"
     },
-    "release_date": "2025-03-21 15:13:15"
+    "release_date": "2025-03-24 23:39:52"
 }
