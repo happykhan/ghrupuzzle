@@ -51,8 +51,10 @@ export default function RootLayout({
              
             </div>
           </nav>
-        {children}
+          <div className='container is-fullhd'>
 
+        {children}
+      </div>
         <footer className="footer">
           <div className="content has-text-centered">
             <p>
