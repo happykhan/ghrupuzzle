@@ -256,7 +256,7 @@ def main(args):
     # upload typing path 
     now = datetime.now()
     practice_release_date = now.strftime("%Y-%m-%d %H:%M:%S")
-    test_release_date = (now + relativedelta(months=1)).strftime("%Y-%m-%d %H:%M:%S")
+    test_release_date = "2025-04-28 07:00:00"
     upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
     upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
     upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
