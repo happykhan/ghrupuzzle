@@ -40,4 +40,4 @@ wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6d9ceb52semb_R1.
 wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_6d9ceb52semb_R2.fastq.gz
 wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3cc326fantam_R1.fastq.gz
 wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/Sample_3cc326fantam_R2.fastq.gz
-wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/real_assembly_sample_sheet_de3cfc1e7e.csv
+wget https://pub-e661bf7ded744bd79c156d3a4f4323ef.r2.dev/real_assembly_sample_sheet_1b3350d069.csv

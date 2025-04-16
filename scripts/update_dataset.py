@@ -319,8 +319,8 @@ def main(args):
     total_uploaded_files += upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
     total_uploaded_files += upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
     logging.info("Checking outbreak exercise files...")
-    total_uploaded_files += upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
-    total_uploaded_files += upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)    
+    total_uploaded_files += upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, args.force, practice_release_date)
+    total_uploaded_files += upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, args.force, test_release_date)    
     if args.delete:
         logging.info("Deleting files not in list...")
         delete_files_not_in_list(total_uploaded_files)
