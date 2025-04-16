@@ -107,7 +107,7 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
     secret_access_key = os.getenv("SECRET_ACCESS_KEY")
     endpoint_url = os.getenv("ENDPOINT_URL")
     public_url = os.getenv("PUBLIC_URL")
-
+    file_list = []
     # Check if environment variables are set
     if not all([bucket_name, access_key_id, secret_access_key, endpoint_url]):
         raise ValueError(
@@ -148,6 +148,8 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
             x["R2_URL"] = f"{public_url}/{r2_name}"
             x['R1_PATH'] = os.path.join(directory_path, r1_name)
             x['R2_PATH'] = os.path.join(directory_path, r2_name)
+            file_list.append(r1_name)
+            file_list.append(r2_name)
     file_details = {'samples': []}
     # Walk through the directory and upload files
     for sample in answer_sheet:
@@ -171,16 +173,19 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Upload answer_sheet.csv with random filename
     s3.upload_file(answer_sheet_path, bucket_name, random_filename, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
+    file_list.append(random_filename)
     # upload sample_sheet.csv
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
     s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
+    file_list.append(samplesheet_name)
     # Write details to JSON file
     with open(f"public/{dataset}_file_details.json", "w", encoding="utf-8") as json_file:
         json.dump(file_details, json_file, indent=4)
 
     create_download_script(dataset, file_details)
+    return file_list
             
 def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Load environment variables from .env file
@@ -216,6 +221,7 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
         config=Config(signature_version="s3v4"),
     )
     file_details = {'samples': []}
+    file_list = []
     with open(answer_sheet_path, mode="r", encoding="utf-8") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         answer_sheet = [row for row in csv_reader]
@@ -230,6 +236,7 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
                 'public_name': sample['public_name'],
                 'FASTA_URL': sample['FASTA_URL'],
             })
+            file_list.append(fasta_file)
             fasta_path = os.path.join(os.path.dirname(answer_sheet_path), fasta_file)
             file_upload(s3, fasta_path, bucket_name, fasta_file, force)
     answer_sheet_md5 = md5(answer_sheet_path)[0:20]
@@ -237,19 +244,55 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
     # Read answer sheet and get out list of included species 
     species_list = list(set(row['SPECIES'] for row in answer_sheet))    
     # Upload answer_sheet.csv with random filename
+    logging.info("Uploading %s to R2...", random_filename)
     s3.upload_file(answer_sheet_path, bucket_name, random_filename, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['answer_sheet'] = { 'filename': random_filename, 'url': f'{public_url}/{random_filename}', 'species': species_list }
+    file_list.append(random_filename)
     # upload sample_sheet.csv 
     # md5 the sample sheet
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
+    logging.info("Uploading %s to R2...", samplesheet_name)
     s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
     fasta_create_download_script(dataset, file_details)
+    file_list.append(samplesheet_name)
     # Write details to JSON file
     with open(f"public/{dataset}_file_details.json", "w", encoding="utf-8") as json_file:
-        json.dump(file_details, json_file, indent=4)    
+        json.dump(file_details, json_file, indent=4)
+    return file_list
 
+def delete_files_not_in_list(total_uploaded_files):
+    """
+    Deletes files in the configured S3 bucket that are not present in a given list of uploaded file keys.
+
+    Args:
+        total_uploaded_files (list of str): A list of the S3 object keys that must remain in the bucket.
+
+    This function uses Boto3 to list all objects in the specified S3 bucket and removes
+    any object whose key is not in the provided list. If the 'Contents' field is missing,
+    nothing is deleted.
+    """
+    # delete files not in the list
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=os.getenv("ACCESS_KEY_ID"),
+        aws_secret_access_key=os.getenv("SECRET_ACCESS_KEY"),
+        endpoint_url=os.getenv("ENDPOINT_URL"),
+        region_name="auto",
+        config=Config(signature_version="s3v4"),
+    )
+    bucket_name = os.getenv("BUCKET_NAME")
+    # list all files in the bucket
+    response = s3.list_objects_v2(Bucket=bucket_name)
+    if 'Contents' in response:
+        for obj in response['Contents']:
+            key = obj['Key']
+            if key not in total_uploaded_files:
+                logging.info("Deleting %s from R2...", key)
+                s3.delete_object(Bucket=bucket_name, Key=key)
+            else:
+                logging.info("Keeping %s in R2...", key)
 
 
 def main(args):
@@ -257,12 +300,19 @@ def main(args):
     now = datetime.now()
     practice_release_date = now.strftime("%Y-%m-%d %H:%M:%S")
     test_release_date = "2025-04-28 07:00:00"
-    upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
-    upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
-    upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
-    upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)
-    upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
-    upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
+    total_uploaded_files = []
+    logging.info("Checking typing exercise files...")
+    total_uploaded_files += upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
+    total_uploaded_files += upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
+    logging.info("Checking outbreak exercise files...")
+    total_uploaded_files += upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
+    total_uploaded_files += upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)
+    logging.info("Checking assembly exercise files...")
+    total_uploaded_files += upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
+    total_uploaded_files += upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
+    if args.delete:
+        logging.info("Deleting files not in list...")
+        delete_files_not_in_list(total_uploaded_files)
 
 
 if __name__ == "__main__":
@@ -272,6 +322,12 @@ if __name__ == "__main__":
         type=str,
         help="The directory path to upload files from.",
         default="../genomepuzzle/ghru_output_dataset/kleborate_test",
+    )
+    parser.add_argument(
+        "--delete",
+        action="store_true",
+        help="Delete the files not included in this upload",
+        default=True,
     )
     parser.add_argument(
         "--realtypingpath",
