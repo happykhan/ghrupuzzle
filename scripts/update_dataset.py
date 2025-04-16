@@ -176,6 +176,11 @@ def upload_fastq_to_r2(dataset, directory_path, dotenv, force, release_date):
     file_list.append(random_filename)
     # upload sample_sheet.csv
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
+    with open(sample_sheet_path, mode="r", encoding="utf-8") as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        sample_sheet = [row for row in csv_reader]
+        # print the column names
+        logging.info("Sample sheet columns: %s", ','.join(sample_sheet[0].keys()))    
     s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
@@ -252,6 +257,12 @@ def upload_fasta_to_r2(dataset, directory_path, dotenv, force, release_date):
     # md5 the sample sheet
     samplesheet_name = f"{dataset}_sample_sheet_{answer_sheet_md5[0:10]}.csv"
     logging.info("Uploading %s to R2...", samplesheet_name)
+    # print column names in sample_sheet_path file 
+    with open(sample_sheet_path, mode="r", encoding="utf-8") as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        sample_sheet = [row for row in csv_reader]
+        # print the column names
+        logging.info("Sample sheet columns: %s", ','.join(sample_sheet[0].keys()))
     s3.upload_file(sample_sheet_path, bucket_name, samplesheet_name, ExtraArgs={'ContentDisposition': 'attachment'})
     file_details['sample_sheet'] = { 'filename': samplesheet_name, 'url': f'{public_url}/{samplesheet_name}' }
     file_details['release_date'] = release_date
@@ -304,12 +315,12 @@ def main(args):
     logging.info("Checking typing exercise files...")
     total_uploaded_files += upload_fasta_to_r2('practice_typing', args.typingpath, args.dotenv, args.force, practice_release_date)
     total_uploaded_files += upload_fasta_to_r2('real_typing', args.realtypingpath, args.dotenv, args.force, test_release_date)
-    logging.info("Checking outbreak exercise files...")
-    total_uploaded_files += upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
-    total_uploaded_files += upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)
     logging.info("Checking assembly exercise files...")
     total_uploaded_files += upload_fastq_to_r2('practice_assembly', args.assemblypath, args.dotenv, args.force, practice_release_date)
     total_uploaded_files += upload_fastq_to_r2('real_assembly', args.realassemblypath, args.dotenv, args.force, test_release_date)
+    logging.info("Checking outbreak exercise files...")
+    total_uploaded_files += upload_fastq_to_r2('practice_outbreak', args.outbreakpath, args.dotenv, True, practice_release_date)
+    total_uploaded_files += upload_fastq_to_r2('real_outbreak', args.realoutbreakpath, args.dotenv, True, test_release_date)    
     if args.delete:
         logging.info("Deleting files not in list...")
         delete_files_not_in_list(total_uploaded_files)
